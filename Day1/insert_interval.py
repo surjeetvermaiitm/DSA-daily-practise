@@ -1,3 +1,6 @@
+#Link https://leetcode.com/problems/insert-interval/
+
+
 class Solution(object):
     def insert(self, intervals, newInterval):
         """
@@ -5,6 +8,7 @@ class Solution(object):
         :type newInterval: List[int]
         :rtype: List[List[int]]
         """
+        #inserting the new interval
         new_list=[]
         if(len(intervals)==0):
             return [newInterval]
@@ -20,7 +24,8 @@ class Solution(object):
         new_list.append(intervals[-1])
         if(intervals[-1][0]<=newInterval[0]):
             new_list.append(newInterval)
-                
+            
+        #merging the interval       
         ans=[]  
         curr_interval=new_list[0]
         for next_interval in new_list[1:]:
